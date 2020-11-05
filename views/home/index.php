@@ -1,196 +1,324 @@
+<main class="site-main">
 
-    <div class="w3l_banner_nav_right">
-        <section class="slider">
-            <div class="flexslider">
-                <ul class="slides">
-                    <li>
-                        <div class="w3l_banner_nav_right_banner">
-                            <h3>Make your <span>food</span> with Spicy.</h3>
-                            <div class="more">
-                                <a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="w3l_banner_nav_right_banner1">
-                            <h3>Make your <span>food</span> with Spicy.</h3>
-                            <div class="more">
-                                <a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="w3l_banner_nav_right_banner2">
-                            <h3>upto <i>50%</i> off.</h3>
-                            <div class="more">
-                                <a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+    <!--================ Hero banner start =================-->
+    <section class="hero-banner">
+        <div class="container">
+            <div class="row no-gutters align-items-center pt-60px">
+                <div class="col-5 d-none d-sm-block">
+                    <div class="hero-banner__img">
+                        <img class="img-fluid" src="img/home/hero-banner.png" alt="">
+                    </div>
+                </div>
+                <div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
+                    <div class="hero-banner__content">
+                        <h4>Shop is fun</h4>
+                        <h1>Browse Our Premium Product</h1>
+                        <p>Us which over of signs divide dominion deep fill bring they're meat beho upon own earth without morning over third. Their male dry. They are great appear whose land fly grass.</p>
+                        <a class="button button-hero" href="#">Browse Now</a>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
+    <!--================ Hero banner start =================-->
 
-    </div>
-    <div class="clearfix"></div>
-</div>
-<!-- banner -->
-<div class="banner_bottom">
-    <div class="wthree_banner_bottom_left_grid_sub">
-    </div>
-    <div class="wthree_banner_bottom_left_grid_sub1">
-        <div class="col-md-4 wthree_banner_bottom_left">
-            <div class="wthree_banner_bottom_left_grid">
-                <img src="images/4.jpg" alt=" " class="img-responsive" />
-                <div class="wthree_banner_bottom_left_grid_pos">
-                    <h4>Discount Offer <span>25%</span></h4>
-                </div>
+    <!--================ Hero Carousel start =================-->
+    <section class="section-margin mt-0">
+        <div class="owl-carousel owl-theme hero-carousel">
+            <div class="hero-carousel__slide">
+                <img src="img/home/hero-slide1.png" alt="" class="img-fluid">
+                <a href="#" class="hero-carousel__slideOverlay">
+                    <h3>Wireless Headphone</h3>
+                    <p>Accessories Item</p>
+                </a>
+            </div>
+            <div class="hero-carousel__slide">
+                <img src="img/home/hero-slide2.png" alt="" class="img-fluid">
+                <a href="#" class="hero-carousel__slideOverlay">
+                    <h3>Wireless Headphone</h3>
+                    <p>Accessories Item</p>
+                </a>
+            </div>
+            <div class="hero-carousel__slide">
+                <img src="img/home/hero-slide3.png" alt="" class="img-fluid">
+                <a href="#" class="hero-carousel__slideOverlay">
+                    <h3>Wireless Headphone</h3>
+                    <p>Accessories Item</p>
+                </a>
             </div>
         </div>
-        <div class="col-md-4 wthree_banner_bottom_left">
-            <div class="wthree_banner_bottom_left_grid">
-                <img src="images/5.jpg" alt=" " class="img-responsive" />
-                <div class="wthree_banner_btm_pos">
-                    <h3>introducing <span>best store</span> for <i>groceries</i></h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 wthree_banner_bottom_left">
-            <div class="wthree_banner_bottom_left_grid">
-                <img src="images/6.jpg" alt=" " class="img-responsive" />
-                <div class="wthree_banner_btm_pos1">
-                    <h3>Save <span>Upto</span> $10</h3>
-                </div>
-            </div>
-        </div>
-        <div class="clearfix"> </div>
-    </div>
-    <div class="clearfix"> </div>
-</div>
+    </section>
+    <!--================ Hero Carousel end =================-->
 
 <?php if(!empty($offers)) : ?>
-<!-- top-brands -->
-<div class="top-brands">
-    <div class="container">
-        <h3>Hot Offers</h3>
-        <div class="agile_top_brands_grids">
-            <?php foreach($offers as $offer) : ?>
-                <div class="col-md-3 top_brand_left">
-                    <div class="hover14 column">
-                        <div class="agile_top_brand_left_grid">
-                            <div class="agile_top_brand_left_grid_pos">
-                                <?= \yii\helpers\Html::img("@web/images/offer.png", ['alt' => 'offer', 'class' => 'img-responsive']) ?>
+    <!-- ================ trending product section start ================= -->
+    <section class="section-margin calc-60px">
+        <div class="container">
+            <div class="section-intro pb-60px">
+                <p>Popular Item in the market</p>
+                <h2>Trending <span class="section-intro__style">Product</span></h2>
+            </div>
+            <div class="row">
+
+                <?php foreach($offers as $offer) : ?>
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="card text-center card-product">
+                            <div class="card-product__img">
+                                <?= \yii\helpers\Html::img(
+                                        "@web/products/{$offer->img}",
+                                        [
+                                            'class' => 'card-img',
+                                            'alt' => $offer->title
+                                        ]
+                                ) ?>
+                                <ul class="card-product__imgOverlay">
+                                    <li><button><i class="ti-search"></i></button></li>
+                                    <li><button><i class="ti-shopping-cart"></i></button></li>
+                                    <li><button><i class="ti-heart"></i></button></li>
+                                </ul>
                             </div>
-                            <div class="agile_top_brand_left_grid1">
-                                <figure>
-                                    <div class="snipcart-item block">
-                                        <div class="snipcart-thumb">
-                                            <a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $offer->id]) ?>">
-                                                <?= \yii\helpers\Html::img("@web/products/{$offer->img}", ['alt' => $offer->title]) ?>
-                                            </a>
-                                            <p><?= $offer->title ?>></p>
-                                            <h4>
-                                                $<?= $offer->price ?>
-                                                <?php if((float)$offer->old_price) : ?>
-                                                    <span>$<?= $offer->old_price ?></span>
-                                                <?php endif; ?>
-                                            </h4>
-                                        </div>
-                                        <div class="snipcart-details top_brand_home_details">
-                                            <form action="#" method="post">
-                                                <fieldset>
-                                                    <input type="hidden" name="cmd" value="_cart" />
-                                                    <input type="hidden" name="add" value="1" />
-                                                    <input type="hidden" name="business" value=" " />
-                                                    <input type="hidden" name="item_name" value="Pepsi soft drink" />
-                                                    <input type="hidden" name="amount" value="8.00" />
-                                                    <input type="hidden" name="discount_amount" value="1.00" />
-                                                    <input type="hidden" name="currency_code" value="USD" />
-                                                    <input type="hidden" name="return" value=" " />
-                                                    <input type="hidden" name="cancel_return" value=" " />
-                                                    <input type="submit" name="submit" value="Add to cart" class="button" />
-                                                </fieldset>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </figure>
+                            <div class="card-body">
+                                <p>Accessories</p>
+                                <h4 class="card-product__title">
+                                    <a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $offer->id]) ?>">
+                                        <?= $offer->title ?>
+                                    </a>
+                                </h4>
+                                <p class="card-product__price"><?= round($offer->price) ?> руб.</p>
                             </div>
                         </div>
                     </div>
-                </div>
-            <?php endforeach; ?>
-            <div class="clearfix"> </div>
+                <?php endforeach; ?>
+
+            </div>
         </div>
-    </div>
-</div>
-<!-- //top-brands -->
+    </section>
+    <!-- ================ trending product section end ================= -->
 <?php endif; ?>
-<!-- fresh-vegetables -->
-<div class="fresh-vegetables">
-    <div class="container">
-        <h3>Top Products</h3>
-        <div class="w3l_fresh_vegetables_grids">
-            <div class="col-md-3 w3l_fresh_vegetables_grid w3l_fresh_vegetables_grid_left">
-                <div class="w3l_fresh_vegetables_grid2">
-                    <ul>
-                        <li><i class="fa fa-check" aria-hidden="true"></i><a href="products.html">All Brands</a></li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i><a href="vegetables.html">Vegetables</a></li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i><a href="vegetables.html">Fruits</a></li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i><a href="drinks.html">Juices</a></li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i><a href="pet.html">Pet Food</a></li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i><a href="bread.html">Bread & Bakery</a></li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i><a href="household.html">Cleaning</a></li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i><a href="products.html">Spices</a></li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i><a href="products.html">Dry Fruits</a></li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i><a href="products.html">Dairy Products</a></li>
-                    </ul>
+
+    <!-- ================ offer section start ================= -->
+    <section class="offer" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 20px 30px" data-top-bottom="background-position: 0 20px">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5">
+                    <div class="offer__content text-center">
+                        <h3>Up To 50% Off</h3>
+                        <h4>Winter Sale</h4>
+                        <p>Him she'd let them sixth saw light</p>
+                        <a class="button button--active mt-3 mt-xl-4" href="#">Shop Now</a>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-9 w3l_fresh_vegetables_grid_right">
-                <div class="col-md-4 w3l_fresh_vegetables_grid">
-                    <div class="w3l_fresh_vegetables_grid1">
-                        <img src="images/8.jpg" alt=" " class="img-responsive" />
-                    </div>
-                </div>
-                <div class="col-md-4 w3l_fresh_vegetables_grid">
-                    <div class="w3l_fresh_vegetables_grid1">
-                        <div class="w3l_fresh_vegetables_grid1_rel">
-                            <img src="images/7.jpg" alt=" " class="img-responsive" />
-                            <div class="w3l_fresh_vegetables_grid1_rel_pos">
-                                <div class="more m1">
-                                    <a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w3l_fresh_vegetables_grid1_bottom">
-                        <img src="images/10.jpg" alt=" " class="img-responsive" />
-                        <div class="w3l_fresh_vegetables_grid1_bottom_pos">
-                            <h5>Special Offers</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 w3l_fresh_vegetables_grid">
-                    <div class="w3l_fresh_vegetables_grid1">
-                        <img src="images/9.jpg" alt=" " class="img-responsive" />
-                    </div>
-                    <div class="w3l_fresh_vegetables_grid1_bottom">
-                        <img src="images/11.jpg" alt=" " class="img-responsive" />
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
-                <div class="agileinfo_move_text">
-                    <div class="agileinfo_marquee">
-                        <h4>get <span class="blink_me">25% off</span> on first order and also get gift voucher</h4>
-                    </div>
-                    <div class="agileinfo_breaking_news">
-                        <span> </span>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="clearfix"> </div>
         </div>
-    </div>
-</div>
-<!-- //fresh-vegetables -->
+    </section>
+    <!-- ================ offer section end ================= -->
+
+    <!-- ================ Best Selling item  carousel ================= -->
+    <section class="section-margin calc-60px">
+        <div class="container">
+            <div class="section-intro pb-60px">
+                <p>Popular Item in the market</p>
+                <h2>Best <span class="section-intro__style">Sellers</span></h2>
+            </div>
+            <div class="owl-carousel owl-theme" id="bestSellerCarousel">
+                <div class="card text-center card-product">
+                    <div class="card-product__img">
+                        <img class="img-fluid" src="img/product/product1.png" alt="">
+                        <ul class="card-product__imgOverlay">
+                            <li><button><i class="ti-search"></i></button></li>
+                            <li><button><i class="ti-shopping-cart"></i></button></li>
+                            <li><button><i class="ti-heart"></i></button></li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <p>Accessories</p>
+                        <h4 class="card-product__title"><a href="single-product.html">Quartz Belt Watch</a></h4>
+                        <p class="card-product__price">$150.00</p>
+                    </div>
+                </div>
+
+                <div class="card text-center card-product">
+                    <div class="card-product__img">
+                        <img class="img-fluid" src="img/product/product2.png" alt="">
+                        <ul class="card-product__imgOverlay">
+                            <li><button><i class="ti-search"></i></button></li>
+                            <li><button><i class="ti-shopping-cart"></i></button></li>
+                            <li><button><i class="ti-heart"></i></button></li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <p>Beauty</p>
+                        <h4 class="card-product__title"><a href="single-product.html">Women Freshwash</a></h4>
+                        <p class="card-product__price">$150.00</p>
+                    </div>
+                </div>
+
+                <div class="card text-center card-product">
+                    <div class="card-product__img">
+                        <img class="img-fluid" src="img/product/product3.png" alt="">
+                        <ul class="card-product__imgOverlay">
+                            <li><button><i class="ti-search"></i></button></li>
+                            <li><button><i class="ti-shopping-cart"></i></button></li>
+                            <li><button><i class="ti-heart"></i></button></li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <p>Decor</p>
+                        <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
+                        <p class="card-product__price">$150.00</p>
+                    </div>
+                </div>
+
+                <div class="card text-center card-product">
+                    <div class="card-product__img">
+                        <img class="img-fluid" src="img/product/product4.png" alt="">
+                        <ul class="card-product__imgOverlay">
+                            <li><button><i class="ti-search"></i></button></li>
+                            <li><button><i class="ti-shopping-cart"></i></button></li>
+                            <li><button><i class="ti-heart"></i></button></li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <p>Decor</p>
+                        <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
+                        <p class="card-product__price">$150.00</p>
+                    </div>
+                </div>
+
+                <div class="card text-center card-product">
+                    <div class="card-product__img">
+                        <img class="img-fluid" src="img/product/product1.png" alt="">
+                        <ul class="card-product__imgOverlay">
+                            <li><button><i class="ti-search"></i></button></li>
+                            <li><button><i class="ti-shopping-cart"></i></button></li>
+                            <li><button><i class="ti-heart"></i></button></li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <p>Accessories</p>
+                        <h4 class="card-product__title"><a href="single-product.html">Quartz Belt Watch</a></h4>
+                        <p class="card-product__price">$150.00</p>
+                    </div>
+                </div>
+
+                <div class="card text-center card-product">
+                    <div class="card-product__img">
+                        <img class="img-fluid" src="img/product/product2.png" alt="">
+                        <ul class="card-product__imgOverlay">
+                            <li><button><i class="ti-search"></i></button></li>
+                            <li><button><i class="ti-shopping-cart"></i></button></li>
+                            <li><button><i class="ti-heart"></i></button></li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <p>Beauty</p>
+                        <h4 class="card-product__title"><a href="single-product.html">Women Freshwash</a></h4>
+                        <p class="card-product__price">$150.00</p>
+                    </div>
+                </div>
+
+                <div class="card text-center card-product">
+                    <div class="card-product__img">
+                        <img class="img-fluid" src="img/product/product3.png" alt="">
+                        <ul class="card-product__imgOverlay">
+                            <li><button><i class="ti-search"></i></button></li>
+                            <li><button><i class="ti-shopping-cart"></i></button></li>
+                            <li><button><i class="ti-heart"></i></button></li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <p>Decor</p>
+                        <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
+                        <p class="card-product__price">$150.00</p>
+                    </div>
+                </div>
+
+                <div class="card text-center card-product">
+                    <div class="card-product__img">
+                        <img class="img-fluid" src="img/product/product4.png" alt="">
+                        <ul class="card-product__imgOverlay">
+                            <li><button><i class="ti-search"></i></button></li>
+                            <li><button><i class="ti-shopping-cart"></i></button></li>
+                            <li><button><i class="ti-heart"></i></button></li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <p>Decor</p>
+                        <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
+                        <p class="card-product__price">$150.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================ Best Selling item  carousel end ================= -->
+
+    <!-- ================ Blog section start ================= -->
+    <section class="blog">
+        <div class="container">
+            <div class="section-intro pb-60px">
+                <p>Popular Item in the market</p>
+                <h2>Latest <span class="section-intro__style">News</span></h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                    <div class="card card-blog">
+                        <div class="card-blog__img">
+                            <img class="card-img rounded-0" src="img/blog/blog1.png" alt="">
+                        </div>
+                        <div class="card-body">
+                            <ul class="card-blog__info">
+                                <li><a href="#">By Admin</a></li>
+                                <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
+                            </ul>
+                            <h4 class="card-blog__title"><a href="single-blog.html">The Richland Center Shooping News and weekly shooper</a></h4>
+                            <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
+                            <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                    <div class="card card-blog">
+                        <div class="card-blog__img">
+                            <img class="card-img rounded-0" src="img/blog/blog2.png" alt="">
+                        </div>
+                        <div class="card-body">
+                            <ul class="card-blog__info">
+                                <li><a href="#">By Admin</a></li>
+                                <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
+                            </ul>
+                            <h4 class="card-blog__title"><a href="single-blog.html">The Shopping News also offers top-quality printing services</a></h4>
+                            <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
+                            <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                    <div class="card card-blog">
+                        <div class="card-blog__img">
+                            <img class="card-img rounded-0" src="img/blog/blog3.png" alt="">
+                        </div>
+                        <div class="card-body">
+                            <ul class="card-blog__info">
+                                <li><a href="#">By Admin</a></li>
+                                <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
+                            </ul>
+                            <h4 class="card-blog__title"><a href="single-blog.html">Professional design staff and efficient equipment you’ll find we offer</a></h4>
+                            <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
+                            <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================ Blog section end ================= -->
+
+
+    <?= $this->render('//layouts/inc/subscribe') ?>
+
+
+</main>

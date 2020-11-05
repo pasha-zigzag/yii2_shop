@@ -1,69 +1,119 @@
-jQuery(document).ready(function($) {
+$(function() {
+  "use strict";
 
-    $(".scroll").click(function(event){
-        event.preventDefault();
-        $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-    });
+  //------- Parallax -------//
+  skrollr.init({
+    forceHeight: false
+  });
 
-    var navoffeset=$(".agileits_header").offset().top;
-    $(window).scroll(function(){
-        var scrollpos=$(window).scrollTop();
-        if(scrollpos >=navoffeset){
-            $(".agileits_header").addClass("fixed");
-        }else{
-            $(".agileits_header").removeClass("fixed");
-        }
-    });
+  //------- Active Nice Select --------//
+  $('select').niceSelect();
 
-    $(".dropdown").hover(
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
-            $(this).toggleClass('open');
+  //------- hero carousel -------//
+  $(".hero-carousel").owlCarousel({
+    items:3,
+    margin: 10,
+    autoplay:false,
+    autoplayTimeout: 5000,
+    loop:true,
+    nav:false,
+    dots:false,
+    responsive:{
+      0:{
+        items:1
+      },
+      600:{
+        items: 2
+      },
+      810:{
+        items:3
+      }
+    }
+  });
+
+  //------- Best Seller Carousel -------//
+  if($('.owl-carousel').length > 0){
+    $('#bestSellerCarousel').owlCarousel({
+      loop:true,
+      margin:30,
+      nav:true,
+      navText: ["<i class='ti-arrow-left'></i>","<i class='ti-arrow-right'></i>"],
+      dots: false,
+      responsive:{
+        0:{
+          items:1
         },
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
-            $(this).toggleClass('open');
+        600:{
+          items: 2
+        },
+        900:{
+          items:3
+        },
+        1130:{
+          items:4
         }
-    );
+      }
+    })
+  }
 
-    /*
-            var defaults = {
-            containerID: 'toTop', // fading element id
-            containerHoverID: 'toTopHover', // fading element hover id
-            scrollSpeed: 1200,
-            easingType: 'linear'
-            };
-        */
+  //------- single product area carousel -------//
+  $(".s_Product_carousel").owlCarousel({
+    items:1,
+    autoplay:false,
+    autoplayTimeout: 5000,
+    loop:true,
+    nav:false,
+    dots:false
+  });
 
-    $().UItoTop({ easingType: 'easeOutQuart' });
+  //------- mailchimp --------//  
+	function mailChimp() {
+		$('#mc_embed_signup').find('form').ajaxChimp();
+	}
+  mailChimp();
+  
+  //------- fixed navbar --------//  
+  $(window).scroll(function(){
+    var sticky = $('.header_area'),
+    scroll = $(window).scrollTop();
 
+    if (scroll >= 100) sticky.addClass('fixed');
+    else sticky.removeClass('fixed');
+  });
 
-});
-
-$(window).load(function(){
-    $('.flexslider').flexslider({
-        animation: "slide",
-        start: function(slider){
-            $('body').removeClass('loading');
+  //------- Price Range slider -------//
+  if(document.getElementById("price-range")){
+  
+    var nonLinearSlider = document.getElementById('price-range');
+    
+    noUiSlider.create(nonLinearSlider, {
+        connect: true,
+        behaviour: 'tap',
+        start: [ 500, 4000 ],
+        range: {
+            // Starting at 500, step the value by 500,
+            // until 4000 is reached. From there, step by 1000.
+            'min': [ 0 ],
+            '10%': [ 500, 500 ],
+            '50%': [ 4000, 1000 ],
+            'max': [ 10000 ]
         }
     });
+  
+  
+    var nodes = [
+        document.getElementById('lower-value'), // 0
+        document.getElementById('upper-value')  // 1
+    ];
+  
+    // Display the slider value and how far the handle moved
+    // from the left edge of the slider.
+    nonLinearSlider.noUiSlider.on('update', function ( values, handle, unencoded, isTap, positions ) {
+        nodes[handle].innerHTML = values[handle];
+    });
+  
+  }
+  
 });
 
-paypal.minicart.render();
 
-paypal.minicart.cart.on('checkout', function (evt) {
-    var items = this.items(),
-        len = items.length,
-        total = 0,
-        i;
-
-    // Count the number of each item in the cart
-    for (i = 0; i < len; i++) {
-        total += items[i].get('quantity');
-    }
-
-    if (total < 3) {
-        alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
-        evt.preventDefault();
-    }
-});
