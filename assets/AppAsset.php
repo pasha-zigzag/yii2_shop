@@ -30,10 +30,12 @@ class AppAsset extends AssetBundle
         'vendors/bootstrap/bootstrap.min.css',
         'vendors/fontawesome/css/all.min.css',
         'vendors/themify-icons/themify-icons.css',
+        'vendors/linericon/style.css',
         'vendors/nice-select/nice-select.css',
         'vendors/owl-carousel/owl.theme.default.min.css',
         'vendors/owl-carousel/owl.carousel.min.css',
         'css/style.css'
+
     ];
     public $js = [
 //        'js/jquery-1.11.1.min.js',

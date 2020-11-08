@@ -38,8 +38,8 @@ AppAsset::register($this);
                     <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
                         <li class="nav-item active"><a class="nav-link" href="<?= yii\helpers\Url::home() ?>">Главная</a></li>
                         <li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">Магазин</a>
+                            <a href="<?= \yii\helpers\Url::to(['shop/index']) ?>" class="nav-link
+                            dropdown-toggle">Магазин</a>
 
                             <?= \app\components\MenuWidget::widget([
                                 'tpl' => 'menu',
@@ -68,7 +68,7 @@ AppAsset::register($this);
                     </ul>
 
                     <ul class="nav-shop">
-                        <li class="nav-item"><button><i class="ti-search"></i></button></li>
+<!--                        <li class="nav-item"><button><i class="ti-search"></i></button></li>-->
                         <li class="nav-item"><button><i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span></button> </li>
                         <li class="nav-item"><a class="button button-header" href="#">Купить сейчас</a></li>
                     </ul>
