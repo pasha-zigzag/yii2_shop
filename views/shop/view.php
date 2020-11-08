@@ -3,11 +3,11 @@
     <div class="container h-100">
         <div class="blog-banner">
             <div class="text-center">
-                <h1><?= $category->title ?></h1>
+                <h1>Магазин</h1>
                 <nav aria-label="breadcrumb" class="banner-breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="<?= yii\helpers\Url::home() ?>">Главная</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><?= $category->title ?></li>
+                        <li class="breadcrumb-item active" aria-current="page">Магазин</li>
                     </ol>
                 </nav>
             </div>
@@ -118,31 +118,31 @@
 
                         <?php if(!empty($products)) : ?>
                             <?php foreach($products as $product) : ?>
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card text-center card-product">
-                                    <div class="card-product__img">
-                                        <?= \yii\helpers\Html::img(
-                                            "@web/products/{$product->img}",
-                                            [
-                                                'class' => 'card-img',
-                                                'alt' => $product->title
-                                            ]
-                                        ) ?>
-                                        <ul class="card-product__imgOverlay">
-                                            <li><button><i class="ti-search"></i></button></li>
-                                            <li><button><i class="ti-shopping-cart"></i></button></li>
-                                            <li><button><i class="ti-heart"></i></button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="card-body">
-                                        <p>Accessories</p>
-                                        <h4 class="card-product__title">
-                                            <a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $product->id]) ?>"><?= $product->title ?></a>
-                                        </h4>
-                                        <p class="card-product__price"><?= round($product->price) ?> руб.</p>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card text-center card-product">
+                                        <div class="card-product__img">
+                                            <?= \yii\helpers\Html::img(
+                                                "@web/products/{$product->img}",
+                                                [
+                                                    'class' => 'card-img',
+                                                    'alt' => $product->title
+                                                ]
+                                            ) ?>
+                                            <ul class="card-product__imgOverlay">
+                                                <li><button><i class="ti-search"></i></button></li>
+                                                <li><button><i class="ti-shopping-cart"></i></button></li>
+                                                <li><button><i class="ti-heart"></i></button></li>
+                                            </ul>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Accessories</p>
+                                            <h4 class="card-product__title">
+                                                <a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $product->id]) ?>"><?= $product->title ?></a>
+                                            </h4>
+                                            <p class="card-product__price"><?= round($product->price) ?> руб.</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             <?php endforeach; ?>
 
                             <div class="col-md-12">
@@ -168,12 +168,12 @@
                         <?php else : ?>
                             <div class="col-md-12">Это пустая категория!</div>
                         <?php endif; ?>
-                    </div>
-                </section>
-                <!-- End Best Seller -->
             </div>
-        </div>
-    </div>
+</section>
+<!-- End Best Seller -->
+</div>
+</div>
+</div>
 </section>
 <!-- ================ category section end ================= -->
 
