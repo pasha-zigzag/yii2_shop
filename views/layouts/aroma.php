@@ -69,7 +69,45 @@ AppAsset::register($this);
 
                     <ul class="nav-shop">
 <!--                        <li class="nav-item"><button><i class="ti-search"></i></button></li>-->
-                        <li class="nav-item"><button><i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span></button> </li>
+                        <li class="nav-item">
+                            <button type="button" data-toggle="modal" data-target="#modal-cart">
+                                <i class="ti-shopping-cart"></i>
+                                <span class="nav-shop__circle"><?= $_SESSION['cart.qty'] ?? ''?></span>
+                            </button>
+                        </li>
+
+                        <div class="modal fade bd-example-modal-lg" id="modal-cart" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Корзина</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body"><?= $this->render('//cart/cart-modal') ?></div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                            Продолжить покупки
+                                        </button>
+                                        <a href="<?= \yii\helpers\Url::to(['cart/view']) ?>" class="btn btn-success">
+                                            Перейти к корзине
+                                        </a>
+                                        <button onclick="clearCart()" type="button" class="btn btn-danger">
+                                            Очистить корзину
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+<!--                        <li class="nav-item">-->
+<!--                            <button>-->
+<!--                                <i class="ti-shopping-cart"></i>-->
+<!--                                <span class="nav-shop__circle">3</span>-->
+<!--                            </button> -->
+<!--                        </li>-->
                         <li class="nav-item"><a class="button button-header" href="#">Купить сейчас</a></li>
                     </ul>
                 </div>

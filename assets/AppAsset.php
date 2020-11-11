@@ -34,8 +34,8 @@ class AppAsset extends AssetBundle
         'vendors/nice-select/nice-select.css',
         'vendors/owl-carousel/owl.theme.default.min.css',
         'vendors/owl-carousel/owl.carousel.min.css',
-        'css/style.css'
-
+        'css/style.css',
+        'css/aroma.css'
     ];
     public $js = [
 //        'js/jquery-1.11.1.min.js',
@@ -51,12 +51,13 @@ class AppAsset extends AssetBundle
         "vendors/skrollr.min.js",
         "vendors/owl-carousel/owl.carousel.min.js",
         "vendors/nice-select/jquery.nice-select.min.js",
+        "vendors/nouislider/nouislider.min.js",
         "vendors/jquery.ajaxchimp.min.js",
         "vendors/mail-script.js",
         "js/main.js"
+
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        //'yii\bootstrap\BootstrapAsset',
     ];
 }

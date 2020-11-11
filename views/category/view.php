@@ -129,8 +129,16 @@
                                             ]
                                         ) ?>
                                         <ul class="card-product__imgOverlay">
-                                            <li><button><i class="ti-search"></i></button></li>
-                                            <li><button><i class="ti-shopping-cart"></i></button></li>
+                                            <li>
+                                                <a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $product->id]) ?>" >
+                                                    <i class="ti-search"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="<?= \yii\helpers\Url::to(['cart/add', 'id' => $product->id]) ?>" data-id="<?=$product->id?>" class="add-to-cart">
+                                                    <i class="ti-shopping-cart"></i>
+                                                </a>
+                                            </li>
                                             <li><button><i class="ti-heart"></i></button></li>
                                         </ul>
                                     </div>

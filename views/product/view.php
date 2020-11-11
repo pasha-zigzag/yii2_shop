@@ -50,16 +50,20 @@
                         </li>
                         <li><a href="#"><span>Наличие</span> : В наличии</a></li>
                     </ul>
-                    <p><?=$product->content?></p>
+                    <p style="margin-bottom:20px"><?=$product->content?></p>
+
                     <div class="product_count">
-                        <label for="qty">Количество:</label>
+                        <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">
                         <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                                class="increase items-count" type="button"><i class="ti-angle-left"></i></button>
-                        <input type="text" name="qty" id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty">
+                                class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
                         <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                                class="reduced items-count" type="button"><i class="ti-angle-right"></i></button>
+                                class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
                     </div>
-                    <a class="button primary-btn" href="#">Добавить в корзину</a>
+
+                    <a href="<?= \yii\helpers\Url::to(['cart/add', 'id' => $product->id]) ?>" data-id="<?=$product->id?>" class="button primary-btn add-to-cart">
+                        Добавить в корзину
+                    </a>
+
 
                     <div class="card_area d-flex align-items-center">
                         <a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>

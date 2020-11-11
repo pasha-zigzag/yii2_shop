@@ -61,33 +61,7 @@
             <div class="row">
 
                 <?php foreach($offers as $offer) : ?>
-                    <div class="col-md-6 col-lg-4 col-xl-3">
-                        <div class="card text-center card-product">
-                            <div class="card-product__img">
-                                <?= \yii\helpers\Html::img(
-                                        "@web/products/{$offer->img}",
-                                        [
-                                            'class' => 'card-img',
-                                            'alt' => $offer->title
-                                        ]
-                                ) ?>
-                                <ul class="card-product__imgOverlay">
-                                    <li><button><i class="ti-search"></i></button></li>
-                                    <li><button><i class="ti-shopping-cart"></i></button></li>
-                                    <li><button><i class="ti-heart"></i></button></li>
-                                </ul>
-                            </div>
-                            <div class="card-body">
-                                <p>Accessories</p>
-                                <h4 class="card-product__title">
-                                    <a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $offer->id]) ?>">
-                                        <?= $offer->title ?>
-                                    </a>
-                                </h4>
-                                <p class="card-product__price"><?= round($offer->price) ?> руб.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?= $this->render('//shop/_card', ['product' => $offer, 'isMain' => true]) ?>
                 <?php endforeach; ?>
 
             </div>

@@ -1,0 +1,57 @@
+.card-product__imgOverlay li a:hover {
+    background: #384aeb;
+}
+
+.card-product__imgOverlay li a i, .card-product__imgOverlay li a span {
+    font-size: 15px;
+    color: #fff;
+    vertical-align: middle;
+}
+
+.card-product__imgOverlay li a {
+    display: inline-block;
+    border: 0;
+    border-radius: 0;
+    padding: 7px 12px;
+    background: #8894ff;
+}
+
+.s_product_text .product_count {
+    margin-right: 10px;
+}
+
+.s_product_text .product_count input {
+    width: 100px;
+    padding-left: 30px;
+    height: 40px;
+    outline: none;
+    box-shadow: none;
+}
+
+.s_product_text .product_count .increase {
+    top: -2px;
+}
+
+.s_product_text .product_count .reduced {
+    bottom: -6px;
+}
+
+.s_product_text .product_count .increase:before {
+    content: "";
+    height: 40px;
+    width: 1px;
+    position: absolute;
+    left: -3px;
+    top: 2px;
+    background: #eeeeee;
+}
+
+.s_product_text .product_count .increase:after {
+    content: "";
+    height: 1px;
+    width: 30px;
+    position: absolute;
+    left: -3px;
+    top: 22px;
+    background: #eeeeee;
+}

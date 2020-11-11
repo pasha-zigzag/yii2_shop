@@ -31,9 +31,11 @@ class MenuWidget extends Widget
     public function run()
     {
         //get cache
-        $menu = \Yii::$app->cache->get('menu');
-        if($menu) {
-            return $menu;
+        if(!YII_ENV_DEV) {
+            $menu = \Yii::$app->cache->get('menu');
+            if($menu) {
+                return $menu;
+            }
         }
 
         $this->data = Category::find()->select('id, title')->indexBy('id')->asArray()->all();
@@ -43,7 +45,9 @@ class MenuWidget extends Widget
         $this->menu_html .= '</ul>';
 
         //set cache
-        \Yii::$app->cache->set('menu', $this->menu_html, 60);
+        if(!YII_ENV_DEV) {
+            \Yii::$app->cache->set('menu', $this->menu_html, 60);
+        }
         return $this->menu_html;
     }
 
